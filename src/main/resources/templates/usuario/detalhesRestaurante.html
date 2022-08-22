@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Site made with Mobirise Website Builder v4.11.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.11.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="Web Site Builder Description">
+  
+  <title>Detalhes</title>
+  <link rel="stylesheet" href="/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/tether/tether.min.css">
+  <link rel="stylesheet" href="/socicon/css/styles.css">
+  <link rel="stylesheet" href="/dropdown/css/style.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+  
+  <link rel="stylesheet" href="/css/homeUser/cards.css">
+  <link rel="preload" as="style" href="/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="/mobirise/css/mbr-additional.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/a35f1a6e09.js"></script>
+  
+  <link rel="stylesheet" href="/css/detales/detalhes.css">
+  <link rel="stylesheet" href="/css/404.css">
+  
+    <!-- jquery -->
+
+  <script src="/js/page3.js"></script>
+	<!-- CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<style type="text/css">
+  	@media only screen and (min-width: 900px) {
+	#img122{
+		width: 500px;
+		height: 300px;
+		border-radius: 50%;
+		align-content: center;
+		margin-left: 25%;
+	}
+
+	
+	
+}
+  	
+  </style>
+</head>
+<body>
+  <div th:unless="${session.usuarioLogado}">
+  	<section class="page_404">
+	    <div class="container2">
+	        <div class="row">   
+	            <div class="col-sm-12">
+	                <div class="col-sm-10 col-sm-offset-1  text-center">
+	                    <div class="four_zero_four_bg">
+	                        <h1 class="text-center ">404</h1>
+	                    </div>
+	                    
+	                    <div class="contant_box_404">
+	                        <h3 class="h2">
+	                        Pagina não encontrada
+	                        </h3>
+	                        
+	                        <p>Clique no botão abaixo e volte para a home!</p>
+	                        
+	                        <a href="/index" class="link_404">Ir para a Home</a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		</section>
+  </div>
+  <div th:if="${session.usuarioLogado}">
+  <section class="menu cid-rIdJm2Bp7s" once="menu" id="menu1-14">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mobirise.co">
+                         <img src="/images/logo.png" alt="Mobirise" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://mobirise.co">
+                        Inspire</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+            	
+            	<li class="nav-item">
+                   <a class="nav-link link text-white display-4" href="/home"><span class="mbrib-home mbr-iconfont mbr-iconfont-btn"></span>
+                        Home &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                </li>  				
+  				<li class="nav-item dropdown">
+        			 <a class="nav-link link text-white dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false"><img id="img" th:src="|/imagem/${session.usuarioLogado.idUsuario}|"/>&nbsp; 
+                      <span th:text="${session.usuarioLogado.nomeUsuario}"></span>&nbsp; &nbsp;</a>
+                     <div class="dropdown-menu">
+                     	<a class="text-white dropdown-item display-4" th:href="|/edite/${session.usuarioLogado.idUsuario}|">Perfil</a>
+                     	<a class="text-white dropdown-item display-4" th:href="|/Meus/Vouchers/${session.usuarioLogado.hashId}|">Meus Vouchers</a>
+                     	<a class="text-white dropdown-item display-4" th:href="|/senha/${session.usuarioLogado.hashId}|">Redefinir senha</a>
+                     	<a class="text-white dropdown-item display-4" href="/logout">Sair</a>
+                     </div>
+                </li>
+            </ul>
+                
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/w">free html5 templates</a></section><section class="mbr-section content5 cid-rIf9UaSEVB mbr-parallax-background" id="content5-1e">
+
+    
+
+    <div class="mbr-overlay" style="opacity: 0.9;"><div id="rgb"></div> </div>
+    <div class="container">
+        <div class="media-container-row">
+        	<div class="social-container">
+           		<img id="img122" th:src="|/imagemR/${restaurante.idRestaurante}|" class="img-fluid col-6">
+              </div>
+           	<br>
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-2" th:text="${restaurante.nomeRestaurante}"></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-7">Na compra de um prato, ganhe outro de igual ou menor valor!</h3>
+                <a th:href="|/gerar/voucher/${session.usuarioLogado.idUsuario}/${oferta.idOferta}|" class="btn btn-sm btn-primary display-4"  style="margin-top:20px ;margin-left: 40%; margin-bottom: 0%;border-radius: 50px; color: white; padding: 20px">Gerar Cupom</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features10 cid-rIhd0AAgUs" id="features10-1n">
+
+    
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="media mb-3" style="margin-left: 80px">
+                    <div class="card-img align-self-center">
+                        <span class="mbr-iconfont mobi-mbri-phone mobi-mbri"></span>
+                    </div>
+                    <h4 class="card-title media-body py-3 mbr-fonts-style display-7">Telefone</h4>
+                </div>
+                <div class="card-box" style="margin-left: 70px">
+                    <p class="mbr-text mbr-fonts-style display-7" th:text="${restaurante.telefone}"></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><p></p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="media mb-3" style="margin-left: 80px">
+                    <div class="card-img align-self-center">
+                        <span class="mbr-iconfont mobi-mbri-hot-cup mobi-mbri"></span>
+                    </div>
+                    <h4 class="card-title media-body py-3 mbr-fonts-style display-7">
+                        Cozinha</h4>
+                </div>
+                <div class="card-box" style="margin-left: 80px">
+                    <p class="mbr-text mbr-fonts-style display-7" th:text="${restaurante.categoria}"></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br></p><p></p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="media mb-3" style="margin-left: 80px">
+                    <div class="card-img align-self-center">
+                        <span class="mbr-iconfont mbrib-pin"></span>
+                    </div>
+                    <h4 class="card-title media-body py-3 mbr-fonts-style display-7">
+                        Localização</h4>
+                </div>
+                <div class="card-box">
+                    <p class="mbr-text mbr-fonts-style display-7" th:text="|${restaurante.cidade}, ${restaurante.bairro} ${restaurante.rua}|"></p>
+                </div>
+            </div>
+
+            <div class="card p-3 col-12 col-md-12 col-lg-12">
+                <h5 class="" style="text-align: center;">CALENDÁRIO DE UTILIZAÇÃO</h5><br>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">DOM</th>
+                        <th scope="col">SEG</th>
+                        <th scope="col">TER</th>
+                        <th scope="col">QUA</th>
+                        <th scope="col">QUI</th>
+                        <th scope="col">SEX</th>
+                        <th scope="col">SAB</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">ALMOÇO</th>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.dA} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.sA} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.tA} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.qA} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.qiA} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.sxA} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.saA} ? 1"></i></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">JANTAR</th>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.dJ} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.sJ} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.tJ} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.qJ} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.qiJ} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.sxJ} ? 1"></i></td>
+                        <td><i class="fa fa-star" aria-hidden="true" th:if="${restaurante.saJ} ? 1"></i></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content4 cid-rIhhn7WtFo" id="content4-1s">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+            	
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">Sobre</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content9 cid-rIhhiV6CqK" id="content9-1r">
+    
+     
+
+    <div class="container">
+        <div class="inner-container" style="width: 100%;">
+            <hr class="line" style="width: 25%;">
+            <div class="section-text align-center mbr-fonts-style display-5" th:text="${oferta.sobre}">
+                    Mobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.Mobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop appMobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop appMobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app<br>
+                </div>
+            <hr class="line" style="width: 25%;">
+        </div>
+        </div>
+</section>
+
+<section class="services1 cid-rIhgloUHCM" id="services1-1p">
+    <!---->
+    <!--Container-->
+    <div class="container">
+	        <div class="row justify-content-center">
+	            <!--Titles-->
+	            <div class="title pb-5 col-12">
+	                <h2 class="align-left pb-3 mbr-fonts-style display-1"><strong>Restaurantes Relacionados</strong></h2>
+	                
+	            </div>
+	            
+	            <div class="owl-carousel">
+		            <!--Card-1-->
+	            	<div  th:each="list : ${restaurantes}">
+		               	<div class="news shadow">
+		                	 	<div class="img-figure">
+		                    	<div class="cat" th:text="${list.categoria}" >Cozinha</div>
+		                   	<img th:src="|/imagemR/${list.idRestaurante}|" class="img-fluid">
+		                 	</div>	
+		       		
+		                  <div class="title">
+		                    <span th:text="|${list.cidade}, ${list.bairro} - ${list.rua} - ${list.numero}|"> </span>
+		                    <h1 th:text="${list.nomeRestaurante}"></h1>
+		                  </div>
+		                  <p class="description" >
+		                   	<span>Horario de abertura: <span th:text="${list.horaAbertura}"></span></span><br><span>Horario de fechamento: <span th:text="${list.horaFechamento}"></span></span>
+		                  </p>
+		        
+		                  <p class="more" style="margin-left: 36%; margin-bottom: 20px;">
+		                    <a style="border-radius: 30px;font-size: 16px;" th:href="@{/detalhes/}+ ${list.idRestaurante}">Detalhes</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+		                  </p>
+		                </div>
+	                </div>
+				
+		        </div>
+				<div>	
+		        	<span th:text="${nada}" style="font-size: 20px; margin-left: 35%"></span>
+		        </div>
+	            
+	        </div>
+    </div>
+</section>
+
+<section class="cid-rIh3HwhxOm" id="footer5-1k">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-3">
+                <div class="media-wrap">
+                    <a href="/home">
+                       <img src="/images/logo.png" alt="Mobirise">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <p class="mbr-text align-right links mbr-fonts-style display-7"><a href="/home" class="text-black">HOME</a></p>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-md-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2019 BeSoftware - All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
+                        <div class="soc-item">
+                            <a href="https://besoftware9.wixsite.com/be-software" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social mbrib-sites"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" >
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" >
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" >
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="#" >
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+  <script src="/web/assets/jquery/jquery.min.js"></script>
+  <script src="/popper/popper.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/tether/tether.min.js"></script>
+  <script src="/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="/parallax/jarallax.min.js"></script>
+  <script src="/smoothscroll/smooth-scroll.js"></script>
+  <script src="/dropdown/js/nav-dropdown.js"></script>
+  <script src="/dropdown/js/navbar-dropdown.js"></script>
+  <script src="/theme/js/script.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  
+  <script>
+  
+  	$(document).ready(function(){
+  		var owl = $('.owl-carousel');
+  		
+  		owl.owlCarousel({
+  		    items:2,
+  		    loop:true,
+  		    margin:10,
+  		 	autoplay:true,
+	  	    autoplayTimeout:4000,
+	  	    autoplayHoverPause:true,
+		  	responsiveClass:true,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:true
+		        },
+		        600:{
+		            items:2,
+		            nav:false
+		        },
+		        1000:{
+		            items:3,
+		            nav:false
+		        }
+		    }
+  		});
+	});
+  
+  </script>
+</body>
+</html>
